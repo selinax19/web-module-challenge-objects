@@ -47,7 +47,7 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
-export const burger = {
+const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
@@ -88,7 +88,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-reviews.push({name: 'Brit', rating: 5, feedback: 'this place is great! Delicious food, awesome atmosphere, would recommend!'});
+reviews.push({name: 'Selina', rating: '3', feedback: 'average'});
 
 console.log('task 4:', reviews);
 
@@ -102,9 +102,18 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+function addReview(arr,name, rating, feedback){
+  const newobject={
+    name,
+    rating,
+    feedback,
+  }
+  arr.push(newobject)
+  return arr;
+  }
 
-console.log('task 5', reviews); 
+
+addReview(reviews,'Selina', '3', 'average');
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -118,8 +127,8 @@ Use the getReviewByIndex function below to do the following:
 
 
 function getReviewByIndex(array, number) {
-  return `${array[number].name} gave the restaurant a ${array[number].rating} star review,
-  and their feedback was: ${array[number].feedback}`;
+  console.log(array[number].name) 
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
 
 console.log('task 7:', getReviewByIndex(reviews, 4));
@@ -138,8 +147,8 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(array) {
-  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].
-    rating} star review, and their feedback was:${array[array.length -1].feedback}`;
+  const lastarray=array[array.length-1]
+  return `${lastarray.name} gave the restaurant a ${lastarray.rating} star review, and their feedback was: ${lastarray.feedback}`;
 
 } 
 
@@ -208,7 +217,7 @@ function carMaker(/* code here */) {
 }
 
 
-/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+/*  Please do not modify anything below this line  */
 function foo(){
   console.log('its working');
   return 'bar';
