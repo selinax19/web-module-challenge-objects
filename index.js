@@ -52,7 +52,7 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   discount: function(person){
-    if(person ==='teacher' && person === 'student'){
+    if(person ==='teacher' || person === 'student'){
       return this.price - (this.price * 0.25);
     }else if (person === 'public'){
       return this.price - (this.price * 0.10);
@@ -88,7 +88,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-reviews.push({name: 'Brit', rating: 5, feedback: 'this place is great! Delicious food awesome atmosphere, would recommend!'});
+reviews.push({name: 'Brit', rating: 5, feedback: 'this place is great! Delicious food, awesome atmosphere, would recommend!'});
 
 console.log('task 4:', reviews);
 
@@ -137,11 +137,13 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].
+    rating} star review, and their feedback was:${array[array.length -1].feedback}`;
+
 } 
 
-
+console.log('Task 7:', getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
